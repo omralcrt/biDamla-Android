@@ -7,4 +7,9 @@
     <string name="loading_dialog_title">Yükleniyor</string>
     <string name="loading_dialog_desc">Lütfen Bekleyin…</string>
 
+    <!-- Login -->
+    <string name="login_title">Giriş Yap</string>
+    <string name="login_description">Telefon numaranı girebilirsin.</string>
+    <string name="continue_button">Devam Et</string>
+
 </resources>
