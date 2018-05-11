@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseActivity;
 import com.pi.bidamla.network.apiServices.AccountService;
-import com.pi.bidamla.ui.widget.ProjectNameToolbar;
+import com.pi.bidamla.ui.widget.BidamlaToolbar;
 
 import javax.inject.Inject;
 
@@ -23,7 +23,7 @@ public class LoginActivity extends BaseActivity {
     AccountService accountService;
 
     @BindView(R.id.toolbar)
-    ProjectNameToolbar toolbar;
+    BidamlaToolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     void init() {
-        toolbar.setListener(new ProjectNameToolbar.ProjectNameToolbarListener() {
+        toolbar.setListener(new BidamlaToolbar.ProjectNameToolbarListener() {
             @Override
             public void closeButtonClicked() {
 

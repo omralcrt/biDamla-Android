@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
-    <declare-styleable name="ProjectNameToolbar">
+    <declare-styleable name="BidamlaToolbar">
         <attr name="closeButtonVisible" format="boolean"/>
     </declare-styleable>
-    <declare-styleable name="ProjectNameTextView">
-        <attr name="projectNameFont" format="enum">
+    <declare-styleable name="BidamlaTextView">
+        <attr name="bidamlaFont" format="enum">
             <enum name="medium" value="0"/>
             <enum name="thin" value="1"/>
             <enum name="light" value="2"/>

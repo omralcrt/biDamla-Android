@@ -2,7 +2,7 @@ package com.pi.bidamla.di;
 
 import android.app.Application;
 
-import com.pi.bidamla.core.ProjectNameApplication;
+import com.pi.bidamla.core.BidamlaApplication;
 
 import javax.inject.Singleton;
 
@@ -27,7 +27,7 @@ public interface AppComponent extends AndroidInjector<DaggerApplication> {
         AppComponent build();
     }
 
-    void inject(ProjectNameApplication app);
+    void inject(BidamlaApplication app);
 
     @Override
     void inject(DaggerApplication instance);

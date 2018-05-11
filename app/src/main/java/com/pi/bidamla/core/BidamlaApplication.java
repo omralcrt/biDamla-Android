@@ -6,7 +6,7 @@ import com.pi.bidamla.di.DaggerAppComponent;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 
-public class ProjectNameApplication extends DaggerApplication {
+public class BidamlaApplication extends DaggerApplication {
 
     @Override
     public void onCreate() {

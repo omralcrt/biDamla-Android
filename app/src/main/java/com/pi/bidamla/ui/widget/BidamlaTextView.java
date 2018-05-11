@@ -7,24 +7,24 @@ import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
 import com.pi.bidamla.R;
-import com.pi.bidamla.helper.ProjectNameFont;
+import com.pi.bidamla.helper.BidamlaFont;
 
 /**
  * Created by omral on 18.04.2018.
  */
 
-public class ProjectNameTextView extends AppCompatTextView {
+public class BidamlaTextView extends AppCompatTextView {
 
-    public ProjectNameTextView(Context context) {
+    public BidamlaTextView(Context context) {
         super(context);
     }
 
-    public ProjectNameTextView(Context context, AttributeSet attrs) {
+    public BidamlaTextView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public ProjectNameTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BidamlaTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
@@ -33,10 +33,10 @@ public class ProjectNameTextView extends AppCompatTextView {
 
         if (attrs != null) {
 
-            TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.ProjectNameTextView);
+            TypedArray arr = context.obtainStyledAttributes(attrs, R.styleable.BidamlaTextView);
 
             if (arr != null) {
-                ProjectNameFont font = ProjectNameFont.valueOf(arr.getInt(R.styleable.ProjectNameTextView_projectNameFont, -1));
+                BidamlaFont font = BidamlaFont.valueOf(arr.getInt(R.styleable.BidamlaTextView_bidamlaFont, -1));
                 if (font != null)
                     setTypeface(ResourcesCompat.getFont(context, font.getFontRes()));
                 arr.recycle();

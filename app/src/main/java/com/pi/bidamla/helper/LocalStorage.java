@@ -9,10 +9,10 @@ import com.pi.bidamla.data.remote.UserModel.*;
 
 public class LocalStorage {
 
-    private static final String PREFS = "com.authorname.projectname.helper.prefs";
-    private static final String TOKEN = "com.authorname.projectname.helper.token";
-    private static final String USER  = "com.authorname.projectname.helper.user";
-    private static final String FIRST_TIME = "com.authorname.projectname.helper.first_time";
+    private static final String PREFS = "com.pi.bidamla.helper.prefs";
+    private static final String TOKEN = "com.pi.bidamla.helper.token";
+    private static final String USER  = "com.pi.bidamla.helper.user";
+    private static final String FIRST_TIME = "com.pi.bidamla.helper.first_time";
 
     //region token
 

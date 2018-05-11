@@ -12,7 +12,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ProjectNameToolbar extends RelativeLayout {
+public class BidamlaToolbar extends RelativeLayout {
 
     public interface ProjectNameToolbarListener {
         void closeButtonClicked();
@@ -25,24 +25,24 @@ public class ProjectNameToolbar extends RelativeLayout {
 
     //region constructors
 
-    public ProjectNameToolbar(Context context) {
+    public BidamlaToolbar(Context context) {
         super(context);
         init(false);
     }
 
-    public ProjectNameToolbar(Context context, AttributeSet attrs) {
+    public BidamlaToolbar(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context.getTheme().obtainStyledAttributes(attrs,R.styleable.ProjectNameToolbar, 0, 0).getBoolean(R.styleable.ProjectNameToolbar_closeButtonVisible,false));
+        init(context.getTheme().obtainStyledAttributes(attrs,R.styleable.BidamlaToolbar, 0, 0).getBoolean(R.styleable.BidamlaToolbar_closeButtonVisible,false));
     }
 
-    public ProjectNameToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BidamlaToolbar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context.getTheme().obtainStyledAttributes(attrs,R.styleable.ProjectNameToolbar, 0, 0).getBoolean(R.styleable.ProjectNameToolbar_closeButtonVisible,false));
+        init(context.getTheme().obtainStyledAttributes(attrs,R.styleable.BidamlaToolbar, 0, 0).getBoolean(R.styleable.BidamlaToolbar_closeButtonVisible,false));
     }
 
-    public ProjectNameToolbar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public BidamlaToolbar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context.getTheme().obtainStyledAttributes(attrs,R.styleable.ProjectNameToolbar, 0, 0).getBoolean(R.styleable.ProjectNameToolbar_closeButtonVisible,false));
+        init(context.getTheme().obtainStyledAttributes(attrs,R.styleable.BidamlaToolbar, 0, 0).getBoolean(R.styleable.BidamlaToolbar_closeButtonVisible,false));
     }
 
     //endregion
@@ -52,7 +52,7 @@ public class ProjectNameToolbar extends RelativeLayout {
     }
 
     private void init(boolean closeButtonVisible) {
-        View view = inflate(getContext(), R.layout.toolbar_project_name, this);
+        View view = inflate(getContext(), R.layout.toolbar_bidamla, this);
         ButterKnife.bind(this, view);
         closeButton.setVisibility(closeButtonVisible ? VISIBLE : GONE);
     }

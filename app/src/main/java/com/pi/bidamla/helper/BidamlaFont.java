@@ -11,7 +11,7 @@ import java.util.Map;
  * Created by omral on 18.04.2018.
  */
 
-public enum ProjectNameFont {
+public enum BidamlaFont {
 
     HelveticaNeueMedium(0),
     HelveticaNeueThin(1),
@@ -19,18 +19,18 @@ public enum ProjectNameFont {
     HelveticaNeueBold(3);
 
     private int value;
-    private static Map<Integer, ProjectNameFont> map = new HashMap<Integer, ProjectNameFont>();
+    private static Map<Integer, BidamlaFont> map = new HashMap<Integer, BidamlaFont>();
 
     static {
-        for (ProjectNameFont font: ProjectNameFont.values())
+        for (BidamlaFont font: BidamlaFont.values())
             map.put(font.value, font);
     }
 
-    ProjectNameFont(int value) {
+    BidamlaFont(int value) {
         this.value = value;
     }
 
-    public static ProjectNameFont valueOf(int value) {
+    public static BidamlaFont valueOf(int value) {
         return map.get(value);
     }
 
