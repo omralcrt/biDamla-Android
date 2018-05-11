@@ -1,4 +1,4 @@
-package com.pi.bidamla.ui.auth;
+package com.pi.bidamla.ui.auth.login;
 
 import android.content.Context;
 import android.os.Bundle;

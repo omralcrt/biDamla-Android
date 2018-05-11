@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseActivity;
 import com.pi.bidamla.network.apiServices.UserService;
-import com.pi.bidamla.ui.auth.LoginActivity;
+import com.pi.bidamla.ui.auth.login.LoginActivity;
 
 import javax.inject.Inject;
 public class SplashActivity extends BaseActivity {

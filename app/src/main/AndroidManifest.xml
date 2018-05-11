@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.pi.bidamla.ui.auth.LoginActivity"/>
+        <activity android:name="com.pi.bidamla.ui.auth.login.LoginActivity"/>
 
     </application>
 
