@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="ProjectNameToolbar">
+        <attr name="closeButtonVisible" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="ProjectNameTextView">
+        <attr name="projectNameFont" format="enum">
+            <enum name="medium" value="0"/>
+            <enum name="thin" value="1"/>
+            <enum name="light" value="2"/>
+            <enum name="bold" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="ProjectNameTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+    </style>
+
+</resources>

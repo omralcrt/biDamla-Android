@@ -1,0 +1,17 @@
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
+
+    <ImageButton
+        android:id="@+id/close_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close_icon"
+        android:background="@null"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp" />
+
+</RelativeLayout>
