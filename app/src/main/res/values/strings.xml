@@ -8,8 +8,13 @@
     <string name="loading_dialog_desc">Lütfen Bekleyin…</string>
 
     <!-- Login -->
-    <string name="login_title">Giriş Yap</string>
+    <string name="login_title">Giriş Yap!</string>
     <string name="login_description">Telefon numaranı girebilirsin.</string>
     <string name="continue_button">Devam Et</string>
+
+    <!-- Register -->
+    <string name="register_title">Hemen Üye Ol!</string>
+    <string name="register_user_agreement">Kullanıcı sözleşmesini okudum, onaylıyorum.</string>
+    <string name="register_button">Kayıt Ol</string>
 
 </resources>

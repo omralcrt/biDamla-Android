@@ -1,7 +1,6 @@
-package com.pi.bidamla.ui.auth.login;
+package com.pi.bidamla.ui.auth.register;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,33 +9,25 @@ import android.view.ViewGroup;
 
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseFragment;
-import com.pi.bidamla.ui.auth.register.RegisterActivity;
 
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class LoginFragment extends BaseFragment {
+public class RegisterFragment extends BaseFragment {
 
     @Inject
     Context context;
 
-    public static LoginFragment newInstance() {
-        return new LoginFragment();
+    public static RegisterFragment newInstance() {
+        return new RegisterFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
         ButterKnife.bind(this, view);
         return view;
-    }
-
-    @OnClick(R.id.continue_button)
-    void continueButtonClicked() {
-        Intent intent = new Intent(context, RegisterActivity.class);
-        startActivity(intent);
     }
 }

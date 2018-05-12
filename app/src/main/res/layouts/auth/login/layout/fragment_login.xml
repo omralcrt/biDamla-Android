@@ -1,98 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bidamla_text_icon" />
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginStart="32dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.pi.bidamla.ui.widget.BidamlaTextView
-                android:id="@+id/bidamlaTextView2"
-                android:layout_width="match_parent"
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:gravity="center_horizontal"
-                android:text="@string/login_title"
-                android:textColor="@color/white"
-                android:textSize="32sp"
-                app:fontFamily="@font/helveticaneue_medium" />
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.35" />
 
-            <com.pi.bidamla.ui.widget.BidamlaTextView
-                android:id="@+id/bidamlaTextView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginBottom="32dp"
-                android:gravity="center_horizontal"
-                android:text="@string/login_description"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:fontFamily="@font/helveticaneue_light" />
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bidamla_text_icon" />
 
-            <EditText
-                android:id="@+id/phone_number_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="16dp"
-                android:background="@color/white"
-                android:ems="10"
-                android:hint="5XXXXXXXXX"
-                android:inputType="phone"
-                android:maxLength="10"
-                android:paddingStart="15dp"
-                android:textColor="@color/black" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline">
 
-            <Button
-                android:id="@+id/continue_button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/white"
-                android:fontFamily="@font/helveticaneue_medium"
-                android:text="@string/continue_button"
-                android:textColor="@color/colorPrimary"
-                android:textSize="20sp" />
-        </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="32dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-</android.support.constraint.ConstraintLayout>
+                    <com.pi.bidamla.ui.widget.BidamlaTextView
+                        android:id="@+id/bidamlaTextView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/login_title"
+                        android:textColor="@color/white"
+                        android:textSize="32sp"
+                        app:fontFamily="@font/helveticaneue_medium" />
+
+                    <com.pi.bidamla.ui.widget.BidamlaTextView
+                        android:id="@+id/bidamlaTextView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="32dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/login_description"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:fontFamily="@font/helveticaneue_light" />
+
+                    <EditText
+                        android:id="@+id/phone_number_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/white"
+                        android:ems="10"
+                        android:hint="5XXXXXXXXX"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        android:paddingStart="15dp"
+                        android:textColor="@color/black" />
+
+                    <Button
+                        android:id="@+id/continue_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@color/white"
+                        android:fontFamily="@font/helveticaneue_medium"
+                        android:text="@string/continue_button"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        android:textAllCaps="false" />
+                </LinearLayout>
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</RelativeLayout>
