@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseActivity;
-import com.pi.bidamla.ui.auth.login.LoginFragment;
 
 import javax.inject.Inject;
 
@@ -25,7 +24,7 @@ public class RegisterActivity extends BaseActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.login_container, RegisterFragment.newInstance())
+                .replace(R.id.register_container, RegisterFragment.newInstance())
                 .commit();
     }
 }
