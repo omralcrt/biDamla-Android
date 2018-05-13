@@ -69,6 +69,7 @@
                         android:hint="İsim"
                         android:inputType="textPersonName"
                         android:maxLength="10"
+                        android:paddingEnd="15dp"
                         android:paddingStart="15dp"
                         android:textColor="@color/black" />
 
@@ -83,6 +84,7 @@
                         android:hint="Soyisim"
                         android:inputType="textPersonName"
                         android:maxLength="10"
+                        android:paddingEnd="15dp"
                         android:paddingStart="15dp"
                         android:textColor="@color/black" />
                 </LinearLayout>
@@ -97,6 +99,7 @@
                     android:hint="5XXXXXXXXX"
                     android:inputType="phone"
                     android:maxLength="10"
+                    android:paddingEnd="15dp"
                     android:paddingStart="15dp"
                     android:textColor="@color/black" />
 
@@ -106,11 +109,13 @@
                     android:layout_height="50dp"
                     android:layout_marginBottom="16dp"
                     android:background="@color/white"
-                    android:editable="false"
                     android:ems="10"
                     android:hint="Kan Grubu"
-                    android:inputType="phone"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
                     android:maxLength="10"
+                    android:paddingEnd="15dp"
                     android:paddingStart="15dp"
                     android:textColor="@color/black" />
 
