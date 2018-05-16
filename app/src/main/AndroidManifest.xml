@@ -25,6 +25,7 @@
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name="com.pi.bidamla.ui.auth.register.RegisterActivity"
             android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.pi.bidamla.ui.main.MainActivity"/>
 
     </application>
 

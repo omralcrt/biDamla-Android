@@ -36,6 +36,10 @@ public class LoginFragment extends BaseFragment {
 
     @OnClick(R.id.continue_button)
     void continueButtonClicked() {
+    }
+
+    @OnClick(R.id.register_button)
+    void registerButtonClicked() {
         Intent intent = new Intent(context, RegisterActivity.class);
         startActivity(intent);
     }

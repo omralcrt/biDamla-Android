@@ -4,6 +4,7 @@ import com.pi.bidamla.ui.auth.login.LoginActivity;
 import com.pi.bidamla.ui.auth.login.LoginFragment;
 import com.pi.bidamla.ui.auth.register.RegisterActivity;
 import com.pi.bidamla.ui.auth.register.RegisterFragment;
+import com.pi.bidamla.ui.main.MainActivity;
 import com.pi.bidamla.ui.splash.SplashActivity;
 
 import dagger.Module;
@@ -27,5 +28,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract RegisterFragment bindRegisterFragment();
+
+    @ContributesAndroidInjector
+    abstract MainActivity bindMainActivity();
 
 }

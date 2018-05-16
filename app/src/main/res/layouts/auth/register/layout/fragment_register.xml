@@ -148,7 +148,7 @@
                     android:textColor="@color/black" />
 
                 <Button
-                    android:id="@+id/continue_button"
+                    android:id="@+id/register_button"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@color/white"

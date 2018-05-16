@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/bloodRequestsTitle"
+        android:icon="@drawable/blood_request_icon" />
+
+    <item
+        android:title="@string/myRequestsTitle"
+        android:icon="@drawable/my_request_icon"/>
+
+    <item
+        android:title="@string/notificationsTitle"
+        android:icon="@drawable/notifications_icon" />
+
+    <item
+        android:title="@string/settingsTitle"
+        android:icon="@drawable/settings_icon" />
+
+</menu>
