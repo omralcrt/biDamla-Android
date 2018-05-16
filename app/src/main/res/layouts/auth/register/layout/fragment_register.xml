@@ -104,6 +104,20 @@
                     android:textColor="@color/black" />
 
                 <EditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:hint="E-Mail"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="10"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:textColor="@color/black" />
+
+                <EditText
                     android:id="@+id/phone_number_edit_text2"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
@@ -114,6 +128,20 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:cursorVisible="false"
+                    android:maxLength="10"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="15dp"
+                    android:textColor="@color/black" />
+
+                <EditText
+                    android:id="@+id/password_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/white"
+                    android:ems="10"
+                    android:hint="Şifre"
+                    android:inputType="textPassword"
                     android:maxLength="10"
                     android:paddingEnd="15dp"
                     android:paddingStart="15dp"
