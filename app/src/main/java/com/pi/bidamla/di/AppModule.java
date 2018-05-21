@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 
 import com.pi.bidamla.network.ApiClient;
-import com.pi.bidamla.network.apiServices.AccountService;
 import com.pi.bidamla.network.apiServices.UserService;
 
 import javax.inject.Singleton;
@@ -19,11 +18,6 @@ public class AppModule {
     @Singleton
     Context provideContext(Application application){
         return application;
-    }
-
-    @Provides
-    AccountService provideAccountService(Context context) {
-        return ApiClient.createService(context, AccountService.class);
     }
 
     @Provides
