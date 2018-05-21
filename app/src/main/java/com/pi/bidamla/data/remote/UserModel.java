@@ -8,7 +8,7 @@ public class UserModel {
 
     }
 
-    public class UserRequest {
+    public static class UserRequest {
         @SerializedName("email")
         private String email;
         @SerializedName("password")

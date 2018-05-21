@@ -68,7 +68,6 @@
                         android:ems="10"
                         android:hint="İsim"
                         android:inputType="textPersonName"
-                        android:maxLength="10"
                         android:paddingEnd="15dp"
                         android:paddingStart="15dp"
                         android:textColor="@color/black" />
@@ -83,7 +82,6 @@
                         android:ems="10"
                         android:hint="Soyisim"
                         android:inputType="textPersonName"
-                        android:maxLength="10"
                         android:paddingEnd="15dp"
                         android:paddingStart="15dp"
                         android:textColor="@color/black" />
@@ -112,7 +110,6 @@
                     android:ems="10"
                     android:hint="E-Mail"
                     android:inputType="textEmailAddress"
-                    android:maxLength="10"
                     android:paddingEnd="15dp"
                     android:paddingStart="15dp"
                     android:textColor="@color/black" />
@@ -128,7 +125,6 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:hint="Kan Grubu"
-                    android:maxLength="10"
                     android:paddingEnd="15dp"
                     android:paddingStart="15dp"
                     android:textColor="@color/black" />
@@ -142,7 +138,6 @@
                     android:ems="10"
                     android:hint="Şifre"
                     android:inputType="textPassword"
-                    android:maxLength="10"
                     android:paddingEnd="15dp"
                     android:paddingStart="15dp"
                     android:textColor="@color/black" />
