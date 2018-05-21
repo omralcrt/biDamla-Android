@@ -50,9 +50,12 @@ android {
                     [
                             'src/main/res/layouts/widget',
                             'src/main/res/layouts/splash',
+                            'src/main/res/layouts/settings',
                             'src/main/res/layouts/rows',
+                            'src/main/res/layouts/notifications',
+                            'src/main/res/layouts/my_requests',
                             'src/main/res/layouts/main',
-                            'src/main/res/layouts/intro',
+                            'src/main/res/layouts/blood_requests',
                             'src/main/res/layouts/auth/register',
                             'src/main/res/layouts/auth/login',
                             'src/main/res/layouts/auth',

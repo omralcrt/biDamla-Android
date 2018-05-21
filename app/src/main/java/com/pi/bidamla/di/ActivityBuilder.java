@@ -4,7 +4,11 @@ import com.pi.bidamla.ui.auth.login.LoginActivity;
 import com.pi.bidamla.ui.auth.login.LoginFragment;
 import com.pi.bidamla.ui.auth.register.RegisterActivity;
 import com.pi.bidamla.ui.auth.register.RegisterFragment;
+import com.pi.bidamla.ui.bloodRequests.BloodRequestsFragment;
 import com.pi.bidamla.ui.main.MainActivity;
+import com.pi.bidamla.ui.myRequests.MyRequestsFragment;
+import com.pi.bidamla.ui.notifications.NotificationsFragment;
+import com.pi.bidamla.ui.settings.SettingsFragment;
 import com.pi.bidamla.ui.splash.SplashActivity;
 
 import dagger.Module;
@@ -31,5 +35,17 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract MainActivity bindMainActivity();
+
+    @ContributesAndroidInjector
+    abstract BloodRequestsFragment bindBloodRequestsFragment();
+
+    @ContributesAndroidInjector
+    abstract MyRequestsFragment bindMyRequestsFragment();
+
+    @ContributesAndroidInjector
+    abstract NotificationsFragment bindNotificationsFragmentFragment();
+
+    @ContributesAndroidInjector
+    abstract SettingsFragment bindSettingsFragmentFragment();
 
 }

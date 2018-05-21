@@ -44,6 +44,8 @@ public class MainActivity extends BaseActivity
         mBottomNavigation.setInactiveColor(ContextCompat.getColor(context, R.color.gray));
         mBottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
         mBottomNavigation.setOnTabSelectedListener(this);
+        mMainViewPager.setAdapter(new PagerAdapter(getSupportFragmentManager()));
+        mMainViewPager.setOffscreenPageLimit(4);
     }
 
     @Override

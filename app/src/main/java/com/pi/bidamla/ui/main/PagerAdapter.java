@@ -4,7 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.pi.bidamla.ui.auth.login.LoginFragment;
+import com.pi.bidamla.ui.bloodRequests.BloodRequestsFragment;
+import com.pi.bidamla.ui.myRequests.MyRequestsFragment;
+import com.pi.bidamla.ui.notifications.NotificationsFragment;
+import com.pi.bidamla.ui.settings.SettingsFragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
@@ -23,13 +26,13 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return LoginFragment.newInstance();
+                return BloodRequestsFragment.newInstance();
             case 1:
-                return LoginFragment.newInstance();
+                return MyRequestsFragment.newInstance();
             case 2:
-                return LoginFragment.newInstance();
+                return NotificationsFragment.newInstance();
             case 3:
-                return LoginFragment.newInstance();
+                return SettingsFragment.newInstance();
             default:
                 return null;
         }
