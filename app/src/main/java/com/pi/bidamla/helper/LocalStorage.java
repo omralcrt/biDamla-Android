@@ -44,7 +44,7 @@ public class LocalStorage {
         if (user == null) {
             editor.remove(USER);
         } else {
-            editor.putString(TOKEN, gson.toJson(user));
+            editor.putString(USER, gson.toJson(user));
         }
 
         editor.apply();

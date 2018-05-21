@@ -78,7 +78,7 @@ public class LoginFragment extends BaseFragment {
                     startActivity(intent);
                     getActivity().finishAffinity();
                 } else {
-                    showMessage(R.string.general_failure, Enums.MessageType.ERROR);
+                    showMessage(R.string.check_inputs, Enums.MessageType.ERROR);
                 }
             }
 

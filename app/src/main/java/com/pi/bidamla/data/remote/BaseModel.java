@@ -72,66 +72,33 @@ public class BaseModel{
     }
 
     public class ArrayResponse<T> {
-        @SerializedName("status")
-        private String status;
-        @SerializedName("errorCode")
-        private int errorCode;
-        @SerializedName("errors")
-        private List<LinkedTreeMap<String,String>> errors;
-        @SerializedName("message")
-        private String message;
-        @SerializedName("data")
-        private T[] data;
+        @SerializedName("count")
+        private String count;
+        @SerializedName("rows")
+        private T[] rows;
 
         public ArrayResponse() {
         }
 
-        public ArrayResponse(String status, int errorCode, List<LinkedTreeMap<String, String>> errors, String message, T[] data) {
-            this.status = status;
-            this.errorCode = errorCode;
-            this.errors = errors;
-            this.message = message;
-            this.data = data;
+        public ArrayResponse(String count, T[] rows) {
+            this.count = count;
+            this.rows = rows;
         }
 
-        public String getStatus() {
-            return status;
+        public String getCount() {
+            return count;
         }
 
-        public void setStatus(String status) {
-            this.status = status;
+        public void setCount(String count) {
+            this.count = count;
         }
 
-        public int getErrorCode() {
-            return errorCode;
+        public T[] getRows() {
+            return rows;
         }
 
-        public void setErrorCode(int errorCode) {
-            this.errorCode = errorCode;
-        }
-
-        public List<LinkedTreeMap<String, String>> getErrors() {
-            return errors;
-        }
-
-        public void setErrors(List<LinkedTreeMap<String, String>> errors) {
-            this.errors = errors;
-        }
-
-        public String getMessage() {
-            return message;
-        }
-
-        public void setMessage(String message) {
-            this.message = message;
-        }
-
-        public T[] getData() {
-            return data;
-        }
-
-        public void setData(T[] data) {
-            this.data = data;
+        public void setRows(T[] rows) {
+            this.rows = rows;
         }
     }
 }

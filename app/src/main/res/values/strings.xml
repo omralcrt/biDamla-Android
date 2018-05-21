@@ -3,6 +3,9 @@
     <string name="general_failure">Beklenmedik bir hata ile karşılaşıldı.</string>
     <string name="try_again">Lütfen daha sonra tekrar deneyin.</string>
     <string name="check_inputs">Lütfen girdiğiniz bilgileri kontrol ediniz.</string>
+    <string name="check_internet_title">İnternet Bağlantınızı Kontrol Ediniz</string>
+    <string name="check_internet_content">BiDamla\'yı kullanabilmek için internet bağlantısı gerekmektedir</string>
+    <string name="ok_button">Tamam</string>
 
     <!-- Loading Dialog -->
     <string name="loading_dialog_title">Yükleniyor</string>
@@ -19,9 +22,15 @@
     <string name="register_button">Kayıt Ol</string>
     
     <!-- Main Activity -->
-    <string name="bloodRequestsTitle">Kan İhtiyaçları</string>
-    <string name="myRequestsTitle">Kan İsteklerim</string>
-    <string name="notificationsTitle">Bildirimler</string>
-    <string name="settingsTitle">Ayarlar</string>
+    <string name="blood_requests_title">Kan İhtiyaçları</string>
+    <string name="my_requests_title">Kan İsteklerim</string>
+    <string name="notifications_title">Bildirimler</string>
+    <string name="settings_title">Ayarlar</string>
+
+    <!-- Request Row -->
+    <string name="name_title">İsim</string>
+    <string name="date_title">Tarih</string>
+    <string name="status_title">Durum</string>
+    <string name="hospital_title">Hastane</string>
 
 </resources>

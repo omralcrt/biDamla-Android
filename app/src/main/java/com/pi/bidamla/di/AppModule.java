@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.pi.bidamla.network.ApiClient;
+import com.pi.bidamla.network.apiServices.BloodRequestService;
 import com.pi.bidamla.network.apiServices.UserService;
 
 import javax.inject.Singleton;
@@ -23,6 +24,11 @@ public class AppModule {
     @Provides
     UserService provideUserService(Context context) {
         return ApiClient.createService(context, UserService.class);
+    }
+
+    @Provides
+    BloodRequestService provideBloodRequestService(Context context) {
+        return ApiClient.createService(context, BloodRequestService.class);
     }
 
 }
