@@ -32,5 +32,7 @@
     <string name="date_title">Tarih</string>
     <string name="status_title">Durum</string>
     <string name="hospital_title">Hastane</string>
+    <string name="waiting">Bekleniyor</string>
+    <string name="completed">Kan Ulaştı</string>
 
 </resources>

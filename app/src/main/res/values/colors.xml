@@ -8,5 +8,6 @@
     <color name="black">#000000</color>
     <color name="gray">#A7A7A7</color>
     <color name="passive_text">#9C9C9C</color>
+    <color name="green">#27AE60</color>
 
 </resources>

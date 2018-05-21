@@ -57,8 +57,15 @@ public class BloodRequestRowAdapter
         BloodRequestRowViewHolder bloodRequestRowViewHolder = (BloodRequestRowViewHolder) holder;
         bloodRequestRowViewHolder.bloodGroupTextView.setText(row.getBloodGroup());
         bloodRequestRowViewHolder.nameTextView.setText(row.getUser().getName());
-        bloodRequestRowViewHolder.statusTextView.setText(row.getRequestStatus());
         bloodRequestRowViewHolder.hospitalTextView.setText("Hospital");
+
+        if (row.getRequestStatus().equals("waiting")) {
+            bloodRequestRowViewHolder.statusTextView.setText(R.string.waiting);
+            bloodRequestRowViewHolder.statusTextView.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
+        } else {
+            bloodRequestRowViewHolder.statusTextView.setText(R.string.completed);
+            bloodRequestRowViewHolder.statusTextView.setTextColor(mContext.getResources().getColor(R.color.green));
+        }
 
         DateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
         DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.getDefault());
