@@ -11,6 +11,7 @@
     <!-- Login -->
     <string name="login_title">Giriş Yap!</string>
     <string name="continue_button">Devam Et</string>
+    <string name="blood_groups">Kan Grupları</string>
 
     <!-- Register -->
     <string name="register_title">Hemen Üye Ol!</string>

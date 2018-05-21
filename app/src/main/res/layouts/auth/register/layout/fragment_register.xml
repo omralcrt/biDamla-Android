@@ -118,16 +118,16 @@
                     android:textColor="@color/black" />
 
                 <EditText
-                    android:id="@+id/phone_number_edit_text2"
+                    android:id="@+id/blood_group_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginBottom="16dp"
                     android:background="@color/white"
+                    android:cursorVisible="false"
                     android:ems="10"
-                    android:hint="Kan Grubu"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:cursorVisible="false"
+                    android:hint="Kan Grubu"
                     android:maxLength="10"
                     android:paddingEnd="15dp"
                     android:paddingStart="15dp"
