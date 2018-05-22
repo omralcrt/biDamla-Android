@@ -35,4 +35,7 @@
     <string name="waiting">Bekleniyor</string>
     <string name="completed">Kan Ulaştı</string>
 
+    <!-- Blood Request Detail Row -->
+    <string name="call_button_title">Ara</string>
+
 </resources>

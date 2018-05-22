@@ -9,5 +9,6 @@
     <color name="gray">#A7A7A7</color>
     <color name="passive_text">#9C9C9C</color>
     <color name="green">#27AE60</color>
+    <color name="backgroud_gray">#F2F2F2</color>
 
 </resources>

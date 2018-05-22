@@ -14,14 +14,14 @@ import butterknife.OnClick;
 
 public class BidamlaToolbar extends RelativeLayout {
 
-    public interface ProjectNameToolbarListener {
+    public interface BidamlaToolbarListener {
         void closeButtonClicked();
     }
 
     @BindView(R.id.close_button)
     ImageButton closeButton;
 
-    private ProjectNameToolbarListener listener;
+    private BidamlaToolbarListener listener;
 
     //region constructors
 
@@ -47,7 +47,7 @@ public class BidamlaToolbar extends RelativeLayout {
 
     //endregion
 
-    public void setListener(ProjectNameToolbarListener listener) {
+    public void setListener(BidamlaToolbarListener listener) {
         this.listener = listener;
     }
 

@@ -9,12 +9,9 @@ import android.widget.TextView;
 
 import com.pi.bidamla.R;
 import com.pi.bidamla.data.remote.BloodRequestModel.BloodRequestResponse;
+import com.pi.bidamla.helper.Utils;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,26 +64,16 @@ public class BloodRequestRowAdapter
             bloodRequestRowViewHolder.statusTextView.setTextColor(mContext.getResources().getColor(R.color.green));
         }
 
-        DateFormat outputFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
-        DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.getDefault());
+        bloodRequestRowViewHolder.dateTextView.setText(Utils.dateFormatter(row.getCreatedAt()));
 
-        String outputText = "";
-
-        try {
-            Date date = inputFormat.parse(row.getCreatedAt());
-            outputText = outputFormat.format(date);
-        } catch (Exception e) {
-            outputText = "";
+        if (row.getRequestStatus().equals("waiting")) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mClickListener.onItemClick(holder.getAdapterPosition());
+                }
+            });
         }
-
-        bloodRequestRowViewHolder.dateTextView.setText(outputText);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mClickListener.onItemClick(holder.getAdapterPosition());
-            }
-        });
     }
 
     @Override
