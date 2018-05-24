@@ -36,6 +36,7 @@
     <string name="completed">Kan Ulaştı</string>
 
     <!-- Blood Request Detail Row -->
+    <string name="request_detail_title">İstek Detayı</string>
     <string name="call_button_title">Ara</string>
 
 </resources>

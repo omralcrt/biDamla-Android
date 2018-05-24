@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.pi.bidamla.R;
 
@@ -20,6 +21,8 @@ public class BidamlaToolbar extends RelativeLayout {
 
     @BindView(R.id.close_button)
     ImageButton closeButton;
+    @BindView(R.id.title_text_view)
+    TextView titleTextView;
 
     private BidamlaToolbarListener listener;
 
@@ -49,6 +52,10 @@ public class BidamlaToolbar extends RelativeLayout {
 
     public void setListener(BidamlaToolbarListener listener) {
         this.listener = listener;
+    }
+
+    public void setTitle(String title) {
+        titleTextView.setText(title);
     }
 
     private void init(boolean closeButtonVisible) {

@@ -1,9 +1,7 @@
 package com.pi.bidamla.ui.bloodRequests;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -76,6 +74,7 @@ public class BloodRequestDetailActivity extends BaseActivity {
     }
 
     void init() {
+        toolbar.setTitle(getResources().getString(R.string.request_detail_title));
         toolbar.setListener(new BidamlaToolbar.BidamlaToolbarListener() {
             @Override
             public void closeButtonClicked() {
@@ -89,13 +88,6 @@ public class BloodRequestDetailActivity extends BaseActivity {
         Intent callIntent = new Intent(Intent.ACTION_DIAL);
         callIntent.setData(Uri.parse("tel:0" + bloodRequest.getUser().getPhoneNumber()));
         startActivity(callIntent);
-    }
-
-    private boolean checkPermission()
-    {
-        String permission = Manifest.permission.CALL_PHONE;
-        int res = checkCallingOrSelfPermission(permission);
-        return (res == PackageManager.PERMISSION_GRANTED);
     }
 
     void exit() {
