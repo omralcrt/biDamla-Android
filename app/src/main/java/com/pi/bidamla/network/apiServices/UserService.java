@@ -1,6 +1,8 @@
 package com.pi.bidamla.network.apiServices;
 
 import com.google.gson.internal.LinkedTreeMap;
+import com.pi.bidamla.data.remote.BaseModel;
+import com.pi.bidamla.data.remote.BloodRequestModel;
 import com.pi.bidamla.data.remote.UserModel;
 import com.pi.bidamla.data.remote.UserModel.UserResponse;
 
@@ -19,4 +21,8 @@ public interface UserService {
 
     @GET(endPoint + "me")
     Call<UserResponse> me();
+
+    @GET(endPoint + "me/bloodrequests")
+    Call<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>>
+    listMyRequests();
 }

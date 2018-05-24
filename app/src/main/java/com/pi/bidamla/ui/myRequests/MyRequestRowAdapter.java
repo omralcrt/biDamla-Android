@@ -1,4 +1,4 @@
-package com.pi.bidamla.ui.bloodRequests;
+package com.pi.bidamla.ui.myRequests;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.pi.bidamla.R;
-import com.pi.bidamla.data.remote.BloodRequestModel.BloodRequestResponse;
+import com.pi.bidamla.data.remote.BloodRequestModel;
 import com.pi.bidamla.helper.Utils;
 
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class BloodRequestRowAdapter
+public class MyRequestRowAdapter
         extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public interface OnItemClickListener {
@@ -24,16 +24,16 @@ public class BloodRequestRowAdapter
     }
 
     private Context mContext;
-    private BloodRequestResponse[] mRows;
-    private OnItemClickListener mClickListener;
+    private BloodRequestModel.BloodRequestResponse[] mRows;
+    private MyRequestRowAdapter.OnItemClickListener mClickListener;
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+    public void setOnItemClickListener(MyRequestRowAdapter.OnItemClickListener onItemClickListener) {
         this.mClickListener = onItemClickListener;
     }
 
-    public BloodRequestRowAdapter(Context context, List<BloodRequestResponse> rows) {
+    public MyRequestRowAdapter(Context context, List<BloodRequestModel.BloodRequestResponse> rows) {
         this.mContext = context;
-        this.mRows = rows.toArray(new BloodRequestResponse[rows.size()]);
+        this.mRows = rows.toArray(new BloodRequestModel.BloodRequestResponse[rows.size()]);
     }
 
     @Override
@@ -43,17 +43,16 @@ public class BloodRequestRowAdapter
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BloodRequestRowViewHolder(LayoutInflater.from(mContext).inflate(R.layout.blood_request_row, parent, false));
+        return new MyRequestRowAdapter.MyRequestRowViewHolder(LayoutInflater.from(mContext).inflate(R.layout.my_request_row, parent, false));
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
 
-        final BloodRequestResponse row = mRows[position];
+        final BloodRequestModel.BloodRequestResponse row = mRows[position];
 
-        BloodRequestRowViewHolder bloodRequestRowViewHolder = (BloodRequestRowViewHolder) holder;
+        MyRequestRowAdapter.MyRequestRowViewHolder bloodRequestRowViewHolder = (MyRequestRowAdapter.MyRequestRowViewHolder) holder;
         bloodRequestRowViewHolder.bloodGroupTextView.setText(row.getBloodGroup());
-        bloodRequestRowViewHolder.nameTextView.setText(row.getUser().getName() + " " + row.getUser().getLastName().substring(0, 1) + ".");
         bloodRequestRowViewHolder.hospitalTextView.setText(row.getHospital().getName());
 
         if (row.getRequestStatus().equals("waiting")) {
@@ -81,12 +80,10 @@ public class BloodRequestRowAdapter
         return mRows.length;
     }
 
-    class BloodRequestRowViewHolder extends RecyclerView.ViewHolder {
+    class MyRequestRowViewHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.blood_group_text_view)
         TextView bloodGroupTextView;
-        @BindView(R.id.name_text_view)
-        TextView nameTextView;
         @BindView(R.id.date_text_view)
         TextView dateTextView;
         @BindView(R.id.status_text_view)
@@ -94,7 +91,7 @@ public class BloodRequestRowAdapter
         @BindView(R.id.hospital_text_view)
         TextView hospitalTextView;
 
-        public BloodRequestRowViewHolder(View itemView) {
+        public MyRequestRowViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

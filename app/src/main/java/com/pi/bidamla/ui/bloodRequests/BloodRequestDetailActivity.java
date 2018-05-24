@@ -68,7 +68,7 @@ public class BloodRequestDetailActivity extends BaseActivity {
         String status = (bloodRequest.getRequestStatus().equals("waiting")) ? getResources().getString(R.string.waiting) : getResources().getString(R.string.completed);
         statusTextView.setText("(" + status + ")");
         statusTextView.setTextColor((bloodRequest.getRequestStatus().equals("waiting")) ? getResources().getColor(R.color.colorPrimary) : getResources().getColor(R.color.green));
-        nameTextView.setText(bloodRequest.getUser().getName());
+        nameTextView.setText(bloodRequest.getUser().getName() + " " + bloodRequest.getUser().getLastName().substring(0, 1) + ".");
         dateTextView.setText(Utils.dateFormatter(bloodRequest.getCreatedAt()));
         hospitalTextView.setText(bloodRequest.getHospital().getName());
     }
