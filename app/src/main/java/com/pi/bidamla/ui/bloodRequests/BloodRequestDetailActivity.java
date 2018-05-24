@@ -1,6 +1,10 @@
 package com.pi.bidamla.ui.bloodRequests;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
@@ -18,6 +22,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class BloodRequestDetailActivity extends BaseActivity {
 
@@ -67,7 +72,7 @@ public class BloodRequestDetailActivity extends BaseActivity {
         statusTextView.setTextColor((bloodRequest.getRequestStatus().equals("waiting")) ? getResources().getColor(R.color.colorPrimary) : getResources().getColor(R.color.green));
         nameTextView.setText(bloodRequest.getUser().getName());
         dateTextView.setText(Utils.dateFormatter(bloodRequest.getCreatedAt()));
-        hospitalTextView.setText("Hospital");
+        hospitalTextView.setText(bloodRequest.getHospital().getName());
     }
 
     void init() {
@@ -77,6 +82,20 @@ public class BloodRequestDetailActivity extends BaseActivity {
                 exit();
             }
         });
+    }
+
+    @OnClick(R.id.call_button)
+    void callNumberClicked() {
+        Intent callIntent = new Intent(Intent.ACTION_DIAL);
+        callIntent.setData(Uri.parse("tel:0" + bloodRequest.getUser().getPhoneNumber()));
+        startActivity(callIntent);
+    }
+
+    private boolean checkPermission()
+    {
+        String permission = Manifest.permission.CALL_PHONE;
+        int res = checkCallingOrSelfPermission(permission);
+        return (res == PackageManager.PERMISSION_GRANTED);
     }
 
     void exit() {

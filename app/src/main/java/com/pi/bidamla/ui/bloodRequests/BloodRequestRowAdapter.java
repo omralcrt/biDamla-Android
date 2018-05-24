@@ -54,7 +54,7 @@ public class BloodRequestRowAdapter
         BloodRequestRowViewHolder bloodRequestRowViewHolder = (BloodRequestRowViewHolder) holder;
         bloodRequestRowViewHolder.bloodGroupTextView.setText(row.getBloodGroup());
         bloodRequestRowViewHolder.nameTextView.setText(row.getUser().getName());
-        bloodRequestRowViewHolder.hospitalTextView.setText("Hospital");
+        bloodRequestRowViewHolder.hospitalTextView.setText(row.getHospital().getName());
 
         if (row.getRequestStatus().equals("waiting")) {
             bloodRequestRowViewHolder.statusTextView.setText(R.string.waiting);

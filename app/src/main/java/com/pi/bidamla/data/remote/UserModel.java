@@ -9,15 +9,24 @@ public class UserModel {
         private String id;
         @SerializedName("name")
         private String name;
+        @SerializedName("lastName")
+        private String lastName;
+        @SerializedName("phoneNumber")
+        private String phoneNumber;
         @SerializedName("email")
         private String email;
+        @SerializedName("bloodGroup")
+        private String bloodGroup;
         @SerializedName("createdAt")
         private String createdAt;
 
-        public UserResponse(String id, String name, String email, String createdAt) {
+        public UserResponse(String id, String name, String lastName, String phoneNumber, String email, String bloodGroup, String createdAt) {
             this.id = id;
             this.name = name;
+            this.lastName = lastName;
+            this.phoneNumber = phoneNumber;
             this.email = email;
+            this.bloodGroup = bloodGroup;
             this.createdAt = createdAt;
         }
 
@@ -37,12 +46,36 @@ public class UserModel {
             this.name = name;
         }
 
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+
         public String getEmail() {
             return email;
         }
 
         public void setEmail(String email) {
             this.email = email;
+        }
+
+        public String getBloodGroup() {
+            return bloodGroup;
+        }
+
+        public void setBloodGroup(String bloodGroup) {
+            this.bloodGroup = bloodGroup;
         }
 
         public String getCreatedAt() {

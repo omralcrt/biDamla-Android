@@ -14,16 +14,21 @@ public class BloodRequestModel {
         private String bloodGroup;
         @SerializedName("requestStatus")
         private String requestStatus;
+        @SerializedName("hospital")
+        private HospitalModel.HospitalResponse hospital;
         @SerializedName("createdAt")
         private String createdAt;
         @SerializedName("updatedAt")
         private String updatedAt;
 
-        public BloodRequestResponse(String id, UserModel.UserResponse user, String bloodGroup, String requestStatus, String createdAt, String updatedAt) {
+        public BloodRequestResponse(String id, UserModel.UserResponse user, String bloodGroup,
+                                    String requestStatus, HospitalModel.HospitalResponse hospital,
+                                    String createdAt, String updatedAt) {
             this.id = id;
             this.user = user;
             this.bloodGroup = bloodGroup;
             this.requestStatus = requestStatus;
+            this.hospital = hospital;
             this.createdAt = createdAt;
             this.updatedAt = updatedAt;
         }
@@ -58,6 +63,14 @@ public class BloodRequestModel {
 
         public void setRequestStatus(String requestStatus) {
             this.requestStatus = requestStatus;
+        }
+
+        public HospitalModel.HospitalResponse getHospital() {
+            return hospital;
+        }
+
+        public void setHospital(HospitalModel.HospitalResponse hospital) {
+            this.hospital = hospital;
         }
 
         public String getCreatedAt() {
