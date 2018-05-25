@@ -7,6 +7,7 @@ import com.pi.bidamla.ui.auth.register.RegisterFragment;
 import com.pi.bidamla.ui.bloodRequests.BloodRequestDetailActivity;
 import com.pi.bidamla.ui.bloodRequests.BloodRequestsFragment;
 import com.pi.bidamla.ui.main.MainActivity;
+import com.pi.bidamla.ui.myRequests.MyRequestDetailActivity;
 import com.pi.bidamla.ui.myRequests.MyRequestsFragment;
 import com.pi.bidamla.ui.notifications.NotificationsFragment;
 import com.pi.bidamla.ui.settings.SettingsFragment;
@@ -51,5 +52,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract BloodRequestDetailActivity bindBloodRequestDetailActivity();
+
+    @ContributesAndroidInjector
+    abstract MyRequestDetailActivity bindMyRequestDetailActivity();
 
 }

@@ -18,7 +18,6 @@ import com.pi.bidamla.data.remote.BloodRequestModel;
 import com.pi.bidamla.helper.Constants;
 import com.pi.bidamla.helper.Enums;
 import com.pi.bidamla.network.apiServices.UserService;
-import com.pi.bidamla.ui.bloodRequests.BloodRequestDetailActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,7 +91,7 @@ public class MyRequestsFragment extends BaseFragment implements MyRequestRowAdap
 
     @Override
     public void onItemClick(int position) {
-        Intent intent = new Intent(context, BloodRequestDetailActivity.class);
+        Intent intent = new Intent(context, MyRequestDetailActivity.class);
         Gson gson = new Gson();
         intent.putExtra(Constants.BLOOD_REQUEST, gson.toJson(rows.get(position)));
         startActivity(intent);
