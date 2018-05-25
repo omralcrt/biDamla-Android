@@ -90,6 +90,13 @@ public class BloodRequestDetailActivity extends BaseActivity {
         startActivity(callIntent);
     }
 
+    @OnClick(R.id.maps_image_view)
+    void mapsClicked() {
+        String uri = "https://www.google.com/maps/search/?api=1&query=" + bloodRequest.getHospital().getLat() + "," + bloodRequest.getHospital().getLng();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+        context.startActivity(intent);
+    }
+
     void exit() {
         this.finish();
     }
