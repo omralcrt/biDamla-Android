@@ -3,6 +3,7 @@
     <string name="general_failure">Beklenmedik bir hata ile karşılaşıldı.</string>
     <string name="try_again">Lütfen daha sonra tekrar deneyin.</string>
     <string name="check_inputs">Lütfen girdiğiniz bilgileri kontrol ediniz.</string>
+    <string name="check_blood_request">Lütfen seçtiğiniz bilgileri kontrol ediniz.</string>
     <string name="check_internet_title">İnternet Bağlantınızı Kontrol Ediniz</string>
     <string name="check_internet_content">BiDamla\'yı kullanabilmek için internet bağlantısı gerekmektedir</string>
     <string name="ok_button">Tamam</string>
@@ -39,5 +40,21 @@
     <!-- Blood Request Detail Row -->
     <string name="request_detail_title">İstek Detayı</string>
     <string name="call_button_title">Ara</string>
+
+    <!-- Create Request Activity -->
+    <string name="create_blood_request_title">Kan İsteği Oluştur</string>
+    <string name="create_button_title">Oluştur</string>
+    <string name="hospitals">Hastaneler</string>
+    <string name="created_blood_request">Kan isteği oluşturuldu.</string>
+
+    <!-- Blood Groups -->
+    <string name="a_positive">A Rh(+)</string>
+    <string name="a_negative">A Rh(-)</string>
+    <string name="b_positive">B Rh(+)</string>
+    <string name="b_negative">B Rh(-)</string>
+    <string name="ab_positive">AB Rh(+)</string>
+    <string name="ab_negative">AB Rh(-)</string>
+    <string name="zero_positive">0 Rh(+)</string>
+    <string name="zero_negative">0 Rh(-)</string>
 
 </resources>

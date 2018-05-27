@@ -18,6 +18,7 @@ import com.pi.bidamla.data.remote.BloodRequestModel;
 import com.pi.bidamla.helper.Constants;
 import com.pi.bidamla.helper.Enums;
 import com.pi.bidamla.network.apiServices.UserService;
+import com.pi.bidamla.ui.bloodRequests.CreateBloodRequestActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,6 +28,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -87,6 +89,12 @@ public class MyRequestsFragment extends BaseFragment implements MyRequestRowAdap
                 showMessage(R.string.general_failure, Enums.MessageType.ERROR);
             }
         });
+    }
+
+    @OnClick(R.id.fab_button)
+    void fabClicked() {
+        Intent intent = new Intent(context, CreateBloodRequestActivity.class);
+        startActivity(intent);
     }
 
     @Override

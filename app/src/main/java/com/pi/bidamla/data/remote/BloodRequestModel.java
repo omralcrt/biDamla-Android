@@ -89,4 +89,33 @@ public class BloodRequestModel {
             this.updatedAt = updatedAt;
         }
     }
+
+    public static class BloodRequest {
+
+        @SerializedName("bloodGroup")
+        private String bloodGroup;
+        @SerializedName("hospitalId")
+        private String hospitalId;
+
+        public BloodRequest(String bloodGroup, String hospitalId) {
+            this.bloodGroup = bloodGroup;
+            this.hospitalId = hospitalId;
+        }
+
+        public String getBloodGroup() {
+            return bloodGroup;
+        }
+
+        public void setBloodGroup(String bloodGroup) {
+            this.bloodGroup = bloodGroup;
+        }
+
+        public String getHospitalId() {
+            return hospitalId;
+        }
+
+        public void setHospitalId(String hospitalId) {
+            this.hospitalId = hospitalId;
+        }
+    }
 }
