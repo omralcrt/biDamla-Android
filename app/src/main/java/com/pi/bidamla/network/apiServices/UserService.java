@@ -1,6 +1,6 @@
 package com.pi.bidamla.network.apiServices;
 
-import com.google.gson.internal.LinkedTreeMap;
+import com.pi.bidamla.data.remote.AccountModel;
 import com.pi.bidamla.data.remote.BaseModel;
 import com.pi.bidamla.data.remote.BloodRequestModel;
 import com.pi.bidamla.data.remote.UserModel;
@@ -16,7 +16,7 @@ public interface UserService {
     String endPoint = "users/";
 
     @POST(endPoint)
-    Call<LinkedTreeMap>
+    Call<AccountModel.TokenResponse>
     register(@Body UserModel.UserRequest userRequest);
 
     @GET(endPoint + "me")

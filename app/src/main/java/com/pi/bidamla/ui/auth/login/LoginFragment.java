@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-import com.google.gson.internal.LinkedTreeMap;
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseFragment;
+import com.pi.bidamla.data.remote.AccountModel;
 import com.pi.bidamla.helper.Enums;
 import com.pi.bidamla.helper.Keyboard;
 import com.pi.bidamla.helper.LocalStorage;
@@ -67,13 +67,14 @@ public class LoginFragment extends BaseFragment {
         showLoading();
         AccountService loginService =
                 ApiClient.createService(context, AccountService.class, email, password);
-        Call<LinkedTreeMap> call = loginService.login();
-        call.enqueue(new Callback<LinkedTreeMap>() {
+        Call<AccountModel.TokenResponse> call = loginService.login();
+        call.enqueue(new Callback<AccountModel.TokenResponse>() {
             @Override
-            public void onResponse(Call<LinkedTreeMap> call, Response<LinkedTreeMap> response) {
+            public void onResponse(Call<AccountModel.TokenResponse> call, Response<AccountModel.TokenResponse> response) {
                 hideLoading();
                 if (response.isSuccessful()) {
-                    LocalStorage.setToken(context, (String) response.body().get("token"));
+                    LocalStorage.setToken(context, response.body().getToken());
+                    LocalStorage.setUser(context, response.body().getUser());
                     Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);
                     getActivity().finishAffinity();
@@ -83,7 +84,7 @@ public class LoginFragment extends BaseFragment {
             }
 
             @Override
-            public void onFailure(Call<LinkedTreeMap> call, Throwable t) {
+            public void onFailure(Call<AccountModel.TokenResponse> call, Throwable t) {
                 hideLoading();
                 showMessage(R.string.general_failure, Enums.MessageType.ERROR);
             }

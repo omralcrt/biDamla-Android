@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.google.gson.internal.LinkedTreeMap;
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseFragment;
+import com.pi.bidamla.data.remote.AccountModel;
 import com.pi.bidamla.data.remote.UserModel;
 import com.pi.bidamla.helper.Enums;
 import com.pi.bidamla.helper.Keyboard;
@@ -112,12 +112,13 @@ public class RegisterFragment extends BaseFragment {
 
         Keyboard.hideSoftKeyboard(getActivity());
         showLoading();
-        userService.register(userRequest).enqueue(new Callback<LinkedTreeMap>() {
+        userService.register(userRequest).enqueue(new Callback<AccountModel.TokenResponse>() {
             @Override
-            public void onResponse(Call<LinkedTreeMap> call, Response<LinkedTreeMap> response) {
+            public void onResponse(Call<AccountModel.TokenResponse> call, Response<AccountModel.TokenResponse> response) {
                 hideLoading();
                 if (response.isSuccessful()) {
-                    LocalStorage.setToken(context, (String) response.body().get("token"));
+                    LocalStorage.setToken(context, response.body().getToken());
+                    LocalStorage.setUser(context, response.body().getUser());
                     Intent intent = new Intent(context, MainActivity.class);
                     startActivity(intent);
                     getActivity().finishAffinity();
@@ -127,7 +128,7 @@ public class RegisterFragment extends BaseFragment {
             }
 
             @Override
-            public void onFailure(Call<LinkedTreeMap> call, Throwable t) {
+            public void onFailure(Call<AccountModel.TokenResponse> call, Throwable t) {
                 hideLoading();
                 showMessage(R.string.general_failure, Enums.MessageType.ERROR);
             }
