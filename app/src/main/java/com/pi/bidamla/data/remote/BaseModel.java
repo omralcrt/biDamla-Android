@@ -73,23 +73,23 @@ public class BaseModel{
 
     public class ArrayResponse<T> {
         @SerializedName("count")
-        private String count;
+        private int count;
         @SerializedName("rows")
         private T[] rows;
 
         public ArrayResponse() {
         }
 
-        public ArrayResponse(String count, T[] rows) {
+        public ArrayResponse(int count, T[] rows) {
             this.count = count;
             this.rows = rows;
         }
 
-        public String getCount() {
+        public int getCount() {
             return count;
         }
 
-        public void setCount(String count) {
+        public void setCount(int count) {
             this.count = count;
         }
 

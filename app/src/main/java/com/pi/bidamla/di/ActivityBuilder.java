@@ -11,6 +11,7 @@ import com.pi.bidamla.ui.main.MainActivity;
 import com.pi.bidamla.ui.myRequests.MyRequestDetailActivity;
 import com.pi.bidamla.ui.myRequests.MyRequestsFragment;
 import com.pi.bidamla.ui.notifications.NotificationsFragment;
+import com.pi.bidamla.ui.settings.ProfileActivity;
 import com.pi.bidamla.ui.settings.SettingsFragment;
 import com.pi.bidamla.ui.splash.SplashActivity;
 
@@ -59,5 +60,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector
     abstract CreateBloodRequestActivity bindCreateBloodRequestActivity();
+
+    @ContributesAndroidInjector
+    abstract ProfileActivity bindProfileActivity();
 
 }

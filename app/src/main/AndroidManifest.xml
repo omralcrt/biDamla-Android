@@ -29,6 +29,7 @@
         <activity android:name="com.pi.bidamla.ui.bloodRequests.BloodRequestDetailActivity"/>
         <activity android:name="com.pi.bidamla.ui.myRequests.MyRequestDetailActivity"/>
         <activity android:name="com.pi.bidamla.ui.bloodRequests.CreateBloodRequestActivity"/>
+        <activity android:name="com.pi.bidamla.ui.settings.ProfileActivity"/>
 
     </application>
 

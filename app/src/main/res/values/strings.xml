@@ -47,6 +47,13 @@
     <string name="hospitals">Hastaneler</string>
     <string name="created_blood_request">Kan isteği oluşturuldu.</string>
 
+    <!-- Settings -->
+    <string name="my_profile_title">Profilim</string>
+    <string name="exit_title">Çıkış</string>
+    <string name="logout_title">Çıkış yapılıyor. Emin misin?</string>
+    <string name="yes_button">Evet</string>
+    <string name="cancel_button">İptal</string>
+
     <!-- Blood Groups -->
     <string name="a_positive">A Rh(+)</string>
     <string name="a_negative">A Rh(-)</string>

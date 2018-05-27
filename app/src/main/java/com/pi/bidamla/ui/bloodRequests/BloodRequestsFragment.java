@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -27,11 +28,12 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BloodRequestsFragment extends BaseFragment implements BloodRequestRowAdapter.OnItemClickListener {
+public class BloodRequestsFragment extends BaseFragment implements BloodRequestRowAdapter.OnItemClickListener, SwipeRefreshLayout.OnRefreshListener {
 
     @Inject
     Context context;
@@ -39,6 +41,8 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
     @Inject
     BloodRequestService bloodRequestService;
 
+    @BindView(R.id.swipe_refresh)
+    SwipeRefreshLayout swipeRefreshLayout;
     @BindView(R.id.blood_requests_recycler_view)
     RecyclerView bloodRequestsRecyclerView;
 
@@ -64,15 +68,16 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
         BloodRequestRowAdapter rowAdapter = new BloodRequestRowAdapter(context, rows);
         rowAdapter.setOnItemClickListener(this);
         bloodRequestsRecyclerView.setAdapter(rowAdapter);
+        swipeRefreshLayout.setOnRefreshListener(this);
     }
 
     void getBloodRequests() {
-        showLoading();
+        swipeRefreshLayout.setRefreshing(true);
         bloodRequestService.listBloodRequests().enqueue(new Callback<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>>() {
             @Override
             public void onResponse(Call<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>> call,
                                    Response<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>> response) {
-                hideLoading();
+                swipeRefreshLayout.setRefreshing(false);
                 if (response.isSuccessful()) {
                     rows = Arrays.asList(response.body().getRows());
                     setUpRecyclerView();
@@ -83,11 +88,23 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
 
             @Override
             public void onFailure(Call<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>> call, Throwable t) {
-                hideLoading();
+                swipeRefreshLayout.setRefreshing(false);
                 showMessage(R.string.general_failure, Enums.MessageType.ERROR);
             }
         });
     }
+
+    @OnClick(R.id.fab_button)
+    void fabClicked() {
+        Intent intent = new Intent(context, CreateBloodRequestActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onRefresh() {
+        getBloodRequests();
+    }
+
 
     @Override
     public void onItemClick(int position) {

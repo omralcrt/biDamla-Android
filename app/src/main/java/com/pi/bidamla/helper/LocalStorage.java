@@ -13,6 +13,7 @@ public class LocalStorage {
     private static final String TOKEN = "com.pi.bidamla.helper.token";
     private static final String USER  = "com.pi.bidamla.helper.user";
     private static final String FIRST_TIME = "com.pi.bidamla.helper.first_time";
+    private static final String COUNT = "com.pi.bidamla.helper.count";
 
     //region token
 
@@ -60,6 +61,20 @@ public class LocalStorage {
 
     public static boolean isFirstTime(Context context) {
         return context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getBoolean(FIRST_TIME, false);
+    }
+
+    //endregion
+
+    //region request count
+
+    public static void setBloodRequestCount(Context context, int count) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).edit();
+        editor.putInt(COUNT, count);
+        editor.apply();
+    }
+
+    public static int getBloodRequestCount(Context context) {
+        return context.getSharedPreferences(PREFS, Context.MODE_PRIVATE).getInt(COUNT, 0);
     }
 
     //endregion
