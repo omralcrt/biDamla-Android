@@ -8,12 +8,15 @@ import android.support.annotation.Nullable;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import com.pi.bidamla.R;
 import com.pi.bidamla.core.BaseActivity;
 import com.pi.bidamla.data.remote.BloodRequestModel;
+import com.pi.bidamla.data.remote.CallModel;
 import com.pi.bidamla.helper.Constants;
 import com.pi.bidamla.helper.Enums;
 import com.pi.bidamla.helper.Utils;
+import com.pi.bidamla.network.apiServices.CallService;
 import com.pi.bidamla.ui.widget.BidamlaToolbar;
 
 import javax.inject.Inject;
@@ -21,11 +24,17 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BloodRequestDetailActivity extends BaseActivity {
 
     @Inject
     Context context;
+
+    @Inject
+    CallService callService;
 
     @BindView(R.id.toolbar)
     BidamlaToolbar toolbar;
@@ -85,9 +94,27 @@ public class BloodRequestDetailActivity extends BaseActivity {
 
     @OnClick(R.id.call_button)
     void callNumberClicked() {
-        Intent callIntent = new Intent(Intent.ACTION_DIAL);
-        callIntent.setData(Uri.parse("tel:0" + bloodRequest.getUser().getPhoneNumber()));
-        startActivity(callIntent);
+        showLoading();
+        CallModel.CallRequest callRequest = new CallModel.CallRequest(bloodRequest.getId());
+        callService.createCall(callRequest).enqueue(new Callback<LinkedTreeMap>() {
+            @Override
+            public void onResponse(Call<LinkedTreeMap> call, Response<LinkedTreeMap> response) {
+                hideLoading();
+                if (response.isSuccessful()) {
+                    Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                    callIntent.setData(Uri.parse("tel:0" + bloodRequest.getUser().getPhoneNumber()));
+                    startActivity(callIntent);
+                } else {
+                    showMessage(R.string.general_failure, Enums.MessageType.ERROR);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LinkedTreeMap> call, Throwable t) {
+                hideLoading();
+                showMessage(R.string.general_failure, Enums.MessageType.ERROR);
+            }
+        });
     }
 
     @OnClick(R.id.maps_image_view)

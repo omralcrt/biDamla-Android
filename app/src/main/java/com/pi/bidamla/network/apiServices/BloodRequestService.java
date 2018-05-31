@@ -8,6 +8,8 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public interface BloodRequestService {
 
@@ -20,4 +22,8 @@ public interface BloodRequestService {
     @POST(endPoint)
     Call<LinkedTreeMap>
     createBloodRequest(@Body BloodRequestModel.BloodRequest bloodRequest);
+
+    @PUT(endPoint + "{id}/complete")
+    Call<LinkedTreeMap>
+    completeBloodRequest(@Path("id") String id);
 }

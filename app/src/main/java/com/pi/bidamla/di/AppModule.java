@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.pi.bidamla.network.ApiClient;
 import com.pi.bidamla.network.apiServices.BloodRequestService;
+import com.pi.bidamla.network.apiServices.CallService;
 import com.pi.bidamla.network.apiServices.HospitalService;
 import com.pi.bidamla.network.apiServices.UserService;
 
@@ -35,6 +36,11 @@ public class AppModule {
     @Provides
     HospitalService provideHospitalService(Context context) {
         return ApiClient.createService(context, HospitalService.class);
+    }
+
+    @Provides
+    CallService provideCallService(Context context) {
+        return ApiClient.createService(context, CallService.class);
     }
 
 }
