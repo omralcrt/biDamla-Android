@@ -1,6 +1,7 @@
 package com.pi.bidamla.ui.bloodRequests;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -207,6 +208,7 @@ public class CreateBloodRequestActivity extends BaseActivity {
                             .onPositive(new MaterialDialog.SingleButtonCallback() {
                                 @Override
                                 public void onClick(MaterialDialog dialog, DialogAction which) {
+                                    setResult(2, new Intent());
                                     finish();
                                 }
                             })

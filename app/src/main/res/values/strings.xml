@@ -31,6 +31,7 @@
     <!-- Request Row -->
     <string name="name_title">İsim</string>
     <string name="date_title">Tarih</string>
+    <string name="hour_title">Saat</string>
     <string name="status_title">Durum</string>
     <string name="hospital_title">Hastane</string>
     <string name="waiting">Bekleniyor</string>
@@ -40,6 +41,8 @@
     <!-- Blood Request Detail Row -->
     <string name="request_detail_title">İstek Detayı</string>
     <string name="call_button_title">Ara</string>
+    <string name="gave_blood_button">Kan Verdi</string>
+    <string name="well_soon_title">Geçmiş olsun :)</string>
 
     <!-- Create Request Activity -->
     <string name="create_blood_request_title">Kan İsteği Oluştur</string>

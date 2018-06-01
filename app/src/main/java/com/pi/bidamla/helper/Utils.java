@@ -26,4 +26,20 @@ public class Utils {
 
         return outputText;
     }
+
+    public static String hourFormatter(String oldDate) {
+        DateFormat outputFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX", Locale.getDefault());
+
+        String outputText = "";
+
+        try {
+            Date date = inputFormat.parse(oldDate);
+            outputText = outputFormat.format(date);
+        } catch (Exception e) {
+            outputText = "";
+        }
+
+        return outputText;
+    }
 }

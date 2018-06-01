@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.pi.bidamla.R;
 import com.pi.bidamla.data.remote.BloodRequestModel.BloodRequestResponse;
+import com.pi.bidamla.helper.LocalStorage;
 import com.pi.bidamla.helper.Utils;
 
 import java.util.List;
@@ -66,7 +67,7 @@ public class BloodRequestRowAdapter
 
         bloodRequestRowViewHolder.dateTextView.setText(Utils.dateFormatter(row.getCreatedAt()));
 
-        if (row.getRequestStatus().equals("waiting")) {
+        if (row.getRequestStatus().equals("waiting") && !row.getUser().getId().equals(LocalStorage.getUser(mContext).getId())) {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

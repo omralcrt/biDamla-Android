@@ -58,6 +58,7 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
         View view = inflater.inflate(R.layout.fragment_blood_request, container, false);
         ButterKnife.bind(this, view);
 
+        swipeRefreshLayout.setRefreshing(true);
         getBloodRequests();
 
         return view;
@@ -72,7 +73,6 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
     }
 
     void getBloodRequests() {
-        swipeRefreshLayout.setRefreshing(true);
         bloodRequestService.listBloodRequests().enqueue(new Callback<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>>() {
             @Override
             public void onResponse(Call<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>> call,
@@ -97,7 +97,7 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
     @OnClick(R.id.fab_button)
     void fabClicked() {
         Intent intent = new Intent(context, CreateBloodRequestActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 2);
     }
 
     @Override
@@ -112,5 +112,21 @@ public class BloodRequestsFragment extends BaseFragment implements BloodRequestR
         Gson gson = new Gson();
         intent.putExtra(Constants.BLOOD_REQUEST, gson.toJson(rows.get(position)));
         startActivity(intent);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (isVisibleToUser && this.getView() != null) {
+            getBloodRequests();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2) {
+            getBloodRequests();
+        }
     }
 }
