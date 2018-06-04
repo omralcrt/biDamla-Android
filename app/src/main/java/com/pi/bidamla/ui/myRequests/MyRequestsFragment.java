@@ -81,8 +81,8 @@ public class MyRequestsFragment extends BaseFragment implements MyRequestRowAdap
                                    Response<BaseModel.ArrayResponse<BloodRequestModel.BloodRequestResponse>> response) {
                 swipeRefreshLayout.setRefreshing(false);
                 if (response.isSuccessful()) {
-                    LocalStorage.setBloodRequestCount(context, response.body().getCount());
                     rows = Arrays.asList(response.body().getRows());
+                    LocalStorage.setBloodRequestCount(context, rows.size());
                     setUpRecyclerView();
                 } else {
                     showMessage(R.string.check_inputs, Enums.MessageType.ERROR);
