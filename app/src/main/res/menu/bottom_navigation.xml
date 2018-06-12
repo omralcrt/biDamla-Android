@@ -9,10 +9,6 @@
         android:icon="@drawable/my_request_icon"/>
 
     <item
-        android:title="@string/notifications_title"
-        android:icon="@drawable/notifications_icon" />
-
-    <item
         android:title="@string/settings_title"
         android:icon="@drawable/settings_icon" />
 

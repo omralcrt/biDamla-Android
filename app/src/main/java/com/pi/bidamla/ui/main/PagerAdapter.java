@@ -11,7 +11,7 @@ import com.pi.bidamla.ui.settings.SettingsFragment;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
 
-    private static int NUM_ITEMS = 4;
+    private static int NUM_ITEMS = 3;
 
     public PagerAdapter(FragmentManager fm) {
         super(fm);
@@ -30,8 +30,6 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 return MyRequestsFragment.newInstance();
             case 2:
-                return NotificationsFragment.newInstance();
-            case 3:
                 return SettingsFragment.newInstance();
             default:
                 return null;
